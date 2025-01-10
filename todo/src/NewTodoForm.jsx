@@ -21,15 +21,16 @@ const NewTodoForm = ({ setTodos, todos }) => {
   return (
     <form onSubmit={handleSubmit} className="new-item-form">
       <div className="form-row">
-        <label htmlFor="item">New Item</label>
+        <label htmlFor="item" className="add-todo">GET THINGS DONE</label>
         <input
           value={newItem}
           onChange={(e) => setNewItem(e.target.value)}
           type="text"
           id="item"
+          placeholder="What do you want to do?"
         />
       </div>
-      <button className="btn">Add</button>
+      <button className="btn">Add Todo</button>
     </form>
   );
 };

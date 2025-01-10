@@ -32,7 +32,7 @@ const TodoList = ({ setTodos, todos }) => {
             </label>
             <button
               onClick={() => deleteTodo(item.id)}
-              className="btn btn-danger"
+              className="btn-danger"
             >
               Delete
             </button>
