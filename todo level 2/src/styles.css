@@ -18,6 +18,18 @@ body {
   color: white;
 }
 
+.description{
+  width: 100%;
+  color: gray;
+  font-size: 13px;
+}
+
+.error{
+  margin: 0;
+  padding: 2px;
+  color: red;
+}
+
 .new-item-form {
   display: flex;
   flex-direction: column;
@@ -104,6 +116,7 @@ body {
   gap: 0.5rem;
   align-items: center;
   justify-content: space-between;
+  flex-flow: row wrap;
 }
 
 .list li label {

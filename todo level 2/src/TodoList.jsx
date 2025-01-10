@@ -36,6 +36,7 @@ const TodoList = ({ setTodos, todos }) => {
             >
               Delete
             </button>
+            {item.description != null && <div className="description">{item.description}</div>}
           </li>
         );
       })}
