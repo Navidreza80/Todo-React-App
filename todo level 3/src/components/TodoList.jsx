@@ -6,7 +6,7 @@ import { get_all_todos } from "../core/services/api/fetch-todos";
 const TodoList = ({ setTodos, todos }) => {
   // functions
   const toggleTodo = async (id, isDone) => {
-    await check_uncheck_todo({ isDone: isDone }, id);
+    await check_uncheck_todo({ isDone: isDone }, id, isDone);
     reFetch();
   };
 
@@ -46,7 +46,7 @@ const TodoList = ({ setTodos, todos }) => {
             <button onClick={() => deleteTodo(item.id)} className="btn-danger">
               Delete
             </button>
-            {item.description != null && (
+            {item.description != null || item.description != "" && (
               <div className="description">{item.description}</div>
             )}
           </li>
