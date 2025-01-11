@@ -17,8 +17,8 @@ const NewTodoForm = ({ setTodos, todos }) => {
     });
   };
   const validation = yup.object().shape({
-    title: yup.string().required("Please enter the title of the todo"),
-    desc: yup.string().optional("Please enter the description of the todo"),
+    title: yup.string().min(5).required("Please enter the title of the todo"),
+    desc: yup.string().min(10).optional("Please enter the description of the todo"),
   });
   return (
     <Formik
