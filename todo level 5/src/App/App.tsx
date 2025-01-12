@@ -5,9 +5,6 @@
 import NewTodoForm from "../components/NewTodoForm";
 import TodoList from "../components/TodoList";
 
-// styles
-import "../style/styles.css";
-
 // apis / functions
 import { get_all_todos } from "../core/services/api/fetch-todos";
 
@@ -32,7 +29,7 @@ function App() {
       {/* add todo form */}
       <NewTodoForm />
       {/* title */}
-      <h1 style={{ color: "white" }}>TODO LIST</h1>
+      <h1 className="text-white mt-6 text-3xl font-bold text-center">TODO LIST</h1>
       {/* todos list wrapper */}
       {data && <TodoList todos={data?.data} />}
       {isLoading && <ClipLoader color="white" />}

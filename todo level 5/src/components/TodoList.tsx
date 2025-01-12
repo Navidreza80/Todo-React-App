@@ -39,12 +39,14 @@ const TodoList = ({ todos }) => {
       {todos.length === 0 && "No Todos"}
       {todos.map((item) => {
         return (
-          <li key={item.id}>
+          <li className="bg-slate-700" key={item.id}>
             <label>
               <input
                 type="checkbox"
                 checked={item.isDone}
-                onChange={(e) => edit_todo.mutate({id: item.id, isDone: e.target.checked})}
+                onChange={(e) =>
+                  edit_todo.mutate({ id: item.id, isDone: e.target.checked })
+                }
               ></input>
               <div
                 style={
@@ -52,6 +54,7 @@ const TodoList = ({ todos }) => {
                     ? { textDecoration: "line-through" }
                     : { textDecoration: "none" }
                 }
+                className="font-semibold text-2xl ml-1 overflow-hidden text-ellipsis w-72 whitespace-nowrap"
               >
                 {item.title}
               </div>
@@ -59,12 +62,12 @@ const TodoList = ({ todos }) => {
             <button
               onClick={() => mutation.mutate(item.id)}
               className="btn-danger"
-            >
-              Delete
-            </button>
+            ></button>
             {item.description != "" && (
-                <div className="description">{item.description}</div>
-      )}
+              <div className="description text-gray-300">
+                {item.description}
+              </div>
+            )}
           </li>
         );
       })}

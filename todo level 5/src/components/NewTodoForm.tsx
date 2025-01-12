@@ -40,7 +40,7 @@ const NewTodoForm = () => {
     description: yup
       .string()
       .min(10)
-      .optional("Please enter the description of the todo"),
+      .optional(),
   });
 
   // jsx render
@@ -51,9 +51,9 @@ const NewTodoForm = () => {
       validationSchema={validation}
     >
       {(form) => (
-        <Form className="new-item-form">
+        <Form className="new-item-form bg-slate-700 p-3 rounded-xl">
           <div className="form-row">
-            <h1 className="add-todo">GET THINGS DONE</h1>
+            <h1 className="add-todo text-center">GET THINGS DONE</h1>
             <h4 style={{ margin: "0", padding: "10px 0", color: "white" }}>
               Title:
             </h4>
